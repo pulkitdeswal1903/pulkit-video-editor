@@ -47,9 +47,9 @@
       items: ["Product commercials", "E-commerce videos", "Sales-oriented advertisements", "Brand consistency"],
     },
     {
-      company: "Enactus Delhi University",
-      role: "Video Editing Lead",
-      items: ["Social campaigns", "Awareness videos", "Creative storytelling"],
+      company: "Klickr",
+      role: "Video Editor",
+      items: ["UGC Advertisements", "Awareness videos", "Creative storytelling"],
     },
   ];
 
