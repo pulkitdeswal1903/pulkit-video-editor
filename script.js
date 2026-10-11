@@ -115,7 +115,7 @@
     { value: 0, suffix: "Fast Delivery", label: "Reliable turnaround", isText: true },
   ];
 
-  const ROLES = ["AI Video Editor", "Motion Designer", "Creative Storyteller"];
+  const ROLES = ["Video Editor", "Motion Designer", "Creative Storyteller", " Product Advertisement"];
 
   /* ---------- UTIL ---------- */
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
