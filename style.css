@@ -75,7 +75,7 @@ ul{ list-style:none; }
   text-transform: uppercase;
   color: var(--violet);
   margin-bottom: 14px;
-  display: flex; align-items: center; gap: 8px;
+  display: block;
 }
 .section-eyebrow::before{
   content: none;
