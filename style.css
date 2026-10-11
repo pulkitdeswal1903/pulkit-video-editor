@@ -78,7 +78,7 @@ ul{ list-style:none; }
   display: flex; align-items: center; gap: 8px;
 }
 .section-eyebrow::before{
-  content:''; width: 22px; height: 1px; background: var(--violet);
+  content: none;
 }
 .section-title{
   font-family: var(--font-display);
