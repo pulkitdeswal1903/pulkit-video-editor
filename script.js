@@ -466,21 +466,41 @@
   }
 
   /* ---------- CONTACT FORM ---------- */
-  function initContactForm() {
-    const form = $("#contactForm");
-    const note = $("#formNote");
-    const label = $("#contactSubmitLabel");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      label.textContent = "Sending…";
-      setTimeout(() => {
-        label.textContent = "Send Message";
-        note.textContent = "Thanks — I'll get back to you within 24 hours. (Connect a form service like Formspree to make this live.)";
-        form.reset();
-      }, 900);
-    });
-  }
 
+function initContactForm() {
+  const form = $("#contactForm");
+  const note = $("#formNote");
+  const label = $("#contactSubmitLabel");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    label.textContent = "Sending...";
+    note.textContent = "";
+
+    try {
+      const response = await fetch("https://formspree.io/f/mppqrkvb", {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        label.textContent = "Send Message";
+        note.textContent = "Thanks — I'll get back to you within 24 hours.";
+        form.reset();
+      } else {
+        label.textContent = "Send Message";
+        note.textContent = "Sorry, your message could not be sent. Please try again.";
+      }
+    } catch (error) {
+      label.textContent = "Send Message";
+      note.textContent = "Network error. Please check your connection and try again.";
+    }
+  });
+}
   /* ---------- SHOWREEL MODAL ---------- */
   function initShowreel() {
     const modal = $("#showreelModal");
